@@ -1,0 +1,15 @@
+<canvas id="myCanvas" width="200" height="200" style="border: 1px solid red;">
+
+</canvas>
+<script>
+    var c=document.getElementById("myCanvas")
+    var ctx=c.getContext("2d");
+    //create a gradient
+    var gradient = ctx.createLinearGradient(0, 0, 200, 0);
+    gradient.addColorStop(0, "red");
+    //Fill with gradient
+    ctx.fillStyle=gradient;
+    ctx.fillRect(10,10,150,80)
+
+
+</script>

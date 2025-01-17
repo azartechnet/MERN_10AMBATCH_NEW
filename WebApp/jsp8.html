@@ -1,0 +1,21 @@
+<!-- Else if ladder -->
+<script>
+    let m1 = parseInt(prompt("Enter the m1 value:"));
+    let m2 = parseInt(prompt("Enter the m2 value:"));
+
+    if ((m1 > 70) && (m2 > 85)) {
+        alert("A grade");
+    } 
+    else if ((m1 > 70) && (m2 > 70)) {
+        alert("B grade");
+    } 
+    else if ((m1 < 70) && (m2 < 70)) {
+        alert("C grade");
+    } 
+    else if ((m1 < 60) || (m2 < 60)) { // Changed to OR condition
+        alert("D grade");
+    } 
+    else {
+        alert("You are not eligible for the scholarship");
+    }
+</script>

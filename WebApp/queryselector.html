@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title></title>
+        <style>
+            .example
+            {
+                background-color: blue;
+            }
+            #unique
+            {
+                background-color: red;
+            }
+        </style>
+    </head>
+<body>
+    <div class="example">FirstElement</div>
+    <div id="unique">SecondElement</div>
+    <div class="example">ThirdElement</div>
+    <script>
+        var firstelm=document.querySelectorAll('.example')
+        if(firstelm)
+    {
+        firstelm[0].style.background='green';
+        
+    }
+    </script>
+</body>
+</html>

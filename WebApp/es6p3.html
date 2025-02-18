@@ -1,0 +1,19 @@
+<p id="demo"></p>
+<!-- <script>
+    const q1=["jan","Feb","Mar"]
+    const q2=["Apr","May","Jun"]
+    const q3=["Jul","Aug","Sep"]
+    const q4=["Oct","Nov","Dec"]
+    // const q=[...q1,...q2,...q3,...q4]
+    const q=[q1,q2,q3,q4]
+
+    document.getElementById("demo").innerHTML=q;
+
+
+</script> -->
+<script>
+    const number=[10,20,30,40]
+    let maxValue=Math.max(...number)
+    let minValue=Math.min(...number)
+    document.getElementById("demo").innerHTML=`Max value is::${maxValue} min value is::${minValue}`;
+</script>

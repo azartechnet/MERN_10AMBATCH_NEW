@@ -1,0 +1,21 @@
+<!-- <script>
+    const empname=new Set(["azar","azar","mohamed","raja"])
+    console.log(empname.size);
+    console.log(empname.has("azar"))
+    console.log(empname)
+</script> -->
+<script>
+    const empname=new Set();
+    empname.add("azar");
+    empname.add("mohamed");
+    empname.add("raja");
+    console.log(empname.size);
+    console.log(empname.has("azar"))
+    console.log(empname)
+
+    let text="";
+    for(let i of empname){
+        text+=i+" ";
+        }
+        console.log(text);
+</script>

@@ -1,0 +1,30 @@
+<p id="d1"></p>
+<script>
+    const f1=new Map();
+    
+    f1.set("a1",100);
+    f1.set("a2",200);
+    f1.set("a3",300);
+
+    //delete
+     f1.delete("a1");
+     //clear
+     f1.clear();
+     //has
+     console.log(f1.has("a1"));
+     //entries
+     let text="";
+     for(const x of f1.entries())
+     {
+         text+=x;
+     }
+     console.log(text)
+     //keys
+     console.log(f1.keys());
+     //values
+     console.log(f1.values());
+     
+    // let numb=f1.get("a1")
+    // console.log(numb);
+    // document.getElementById("d1").innerHTML="There is"+numb+"s";
+</script>

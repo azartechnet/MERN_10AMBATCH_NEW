@@ -40,7 +40,7 @@ r1.render(<App/>)*/
 
   //React list
 
-  const MyElem1=()=>{
+  /*const MyElem1=()=>{
     return(
       <div>
         <h1 style={{backgroundColor:"red"}}>My First Element</h1>
@@ -58,4 +58,74 @@ r1.render(<App/>)*/
     )
   }
   const r1=ReactDOM.createRoot(document.getElementById('root'))
-  r1.render(<MyElem1/>)
+  r1.render(<MyElem1/>)*/
+  //React Conditional Rendering
+  //if ifelse nested if else
+  /*const x=20;
+  let text="";
+  if(x>10)
+  {
+    text="Greater than 10";
+  }
+  else if(x==10)
+  {
+    text="Equal to 10";
+  }
+  else
+  {
+    text="Less than 10";
+  }
+  const MyElem2=()=>{
+    return(
+      <div>
+        <h1 style={{backgroundColor:"red"}}>My First Element</h1>
+        <p>{text}</p>
+      </div>
+      )
+      }
+      const r1=ReactDOM.createRoot(document.getElementById('root'))
+      r1.render(<MyElem2/>)*/
+
+  //import css file
+  /*import './index.css';
+  const App=()=>{
+    return(
+      <h1>Welcome</h1>
+      )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<App/>)*/
+
+  //Function Component
+
+  /*function Sample()
+  {
+    return(
+      <div>
+        <h1>Sample</h1>
+        <form>
+          <label>Enter your name:</label>
+          <input type="text" name="name" />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      )
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Sample/>)*/
+
+  //React Class Component
+
+  class Sample extends React.Component
+  {
+    render()
+    {
+      return(
+        <div>
+          <h1>Sample</h1>
+        </div>
+      )
+    }
+  }
+  const r1=ReactDOM.createRoot(document.getElementById('root'))
+  r1.render(<Sample/>)

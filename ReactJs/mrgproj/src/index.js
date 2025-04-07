@@ -273,7 +273,7 @@ r1.render(<Sample/>)*/
 
 //React Event
 
-function Football()
+/*function Football()
 {
   const shoot=()=>{
     alert("Goal")
@@ -285,5 +285,69 @@ function Football()
   )
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Football/>)
+r1.render(<Football/>)*/
+
+//React Argument Passing
+
+/*function Football()
+{
+  const shoot=(year)=>{
+    alert(`Goal in ${year}`)
+  }
+  return(
+    <div>
+      <button onClick={()=>shoot(2022)}>Shoot</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football/>)*/
+
+/*function MissedGoal()
+{
+  return<h1>Missed</h1>
+}
+function MadeGoal()
+{
+  return<h1>Goal</h1>
+}
+function Football(props)
+{
+  const isGoal=props.isGoal;
+  if(isGoal)
+  {
+    return <MadeGoal/>
+  }
+  else
+  {
+    return <MissedGoal/>
+  }
+}
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football isGoal={false}/>)*/
+
+//React Keys
+
+function Car(props)
+{
+  return<li>{props.id}{props.name}</li>
+}
+function Garage()
+{
+  const cars=[
+    {id:1,name:'BMW'},
+    {id:2,name:'Audi'},
+    {id:3,name:'Mercedes'}
+    ]
+    return(
+      <div>
+        <ul>
+          {cars.map((car)=><Car id={car.id} name={car.name}/>)}
+        </ul>
+      </div>
+    )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Garage/>)
 

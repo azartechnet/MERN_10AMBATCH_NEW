@@ -329,7 +329,7 @@ r1.render(<Football isGoal={false}/>)*/
 
 //React Keys
 
-function Car(props)
+/*function Car(props)
 {
   return<li>{props.id}{props.name}</li>
 }
@@ -349,5 +349,33 @@ function Garage()
     )
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Garage/>)
+r1.render(<Garage/>)*/
+
+//React getDerivedStateFromProps
+
+class Header extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={count:0}
+  }
+
+  static getDerivedStateFromProps(props,state)
+  {
+    console.log('getDerivedStateFromProps called');
+    return{count:props.count}
+  }
+  render()
+  {
+    return(
+      <div>
+        <h1>Header</h1>
+        <p>Count:{this.state.count}</p>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header count={10}/>)
 

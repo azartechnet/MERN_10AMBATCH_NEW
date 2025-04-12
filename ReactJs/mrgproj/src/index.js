@@ -353,7 +353,7 @@ r1.render(<Garage/>)*/
 
 //React getDerivedStateFromProps
 
-class Header extends React.Component
+/*class Header extends React.Component
 {
   constructor(props)
   {
@@ -377,5 +377,64 @@ class Header extends React.Component
   }
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Header count={10}/>)
+r1.render(<Header count={10}/>)*/
+
+//ComponentDidMount
+
+/*class Header extends React.Component
+{
+  constructor(props)
+  {
+    super(props)
+    this.state={favcolor:"red"}
+  }
+  componentDidMount()
+  {
+    console.log('componentDidMount called');
+    setTimeout(()=>{
+      this.setState({favcolor:"blue"})
+    },6000)
+  }
+  render()
+  {
+    return(
+      <div>
+        <h1>Header</h1>
+        <p>My fav color is {this.state.favcolor}</p>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header/>)*/
+
+//Update getDerivedStateFromProps
+
+class Header extends React.Component
+{
+  constructor(props)
+  {
+    super(props)
+    this.state={favcolor:"red"}
+  }
+  static getDerivedStateFromProps(props,state)
+  {
+    console.log('getDerivedStateFromProps called');
+  }
+  changeColor=()=>{
+    this.setState({favcolor:"blue"})
+  }
+  render()
+  {
+    return(
+      <div>
+        <h1>Header</h1>
+        <p>My fav color is {this.state.favcolor}</p>
+        <button onClick={this.changeColor}>Change Color</button>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header/>)
 

@@ -410,7 +410,7 @@ r1.render(<Header/>)*/
 
 //Update getDerivedStateFromProps
 
-class Header extends React.Component
+/*class Header extends React.Component
 {
   constructor(props)
   {
@@ -436,5 +436,62 @@ class Header extends React.Component
   }
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Header/>)
+r1.render(<Header/>)*/
 
+//usestate Hooks
+
+import { useState,useEffect } from 'react';
+
+/*function Counter()
+{
+  const [count,setCount]=useState(0);
+  const [name,setName]=useState("azar");
+  return(
+    <div>
+      <p>Count is {count}</p>
+      <button onClick={()=>setCount(count+1)}>Increment</button>
+      <button onClick={()=>setCount(count-1)}>Decrement</button>
+      <p>My name is {name}</p>
+      <button onClick={()=>setName("Rahul")}>Change Name</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Counter/>)*/
+
+//Another Example
+
+/*function ThemeSwitcher()
+{
+  const [theme, setTheme] = useState('light');
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+    };
+    return(
+      <div>
+        <button onClick={toggleTheme}>Toggle Theme</button>
+        <p>Current theme: {theme}</p>
+      </div>
+      )
+}
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<ThemeSwitcher/>)*/
+
+ //useEffect
+
+ function ClickCounter()
+ {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+    }, [count]);
+    return(
+      <div>
+        <p>Count is {count}</p>
+        <button onClick={() => setCount(count + 1)}>Increment</button>
+        </div>
+    )
+ }
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<ClickCounter/>)
+ 

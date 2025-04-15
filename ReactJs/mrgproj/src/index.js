@@ -479,7 +479,7 @@ r1.render(<Counter/>)*/
 
  //useEffect
 
- function ClickCounter()
+ /*function ClickCounter()
  {
   const [count, setCount] = useState(0);
   useEffect(() => {
@@ -493,5 +493,57 @@ r1.render(<Counter/>)*/
     )
  }
  const r1=ReactDOM.createRoot(document.getElementById('root'))
- r1.render(<ClickCounter/>)
+ r1.render(<ClickCounter/>)*/
+
+ //React using without useContext
+
+ /*function Component1()
+ {
+  const [user,setUser]=useState("mohamed")
+  return(
+    <div>
+      <p>Component 1</p>
+      <p>Username: {user}</p>
+      <button onClick={() => setUser("mohamed ali")}>Change Username</button>
+      <Component2 user={user}/>
+    </div>
+  )
+ }
+ function Component2(props)
+ {
+  return(
+    <div>
+      <p>Component 2</p>
+      <p>Username: {props.user}</p>
+    </div>
+  )
+ }
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<Component1/>)*/
+
+ //React using useContext
+
+ import { useContext,createContext } from 'react';
+  const UserContext=createContext();
+ function Component1()
+ {
+  const [user,setUser]=useState("mohamed");
+  return(
+    <UserContext.Provider value={user}>
+      <h1>Component1 username is::{user}</h1>
+      <Component2/>
+    </UserContext.Provider>
+  )
+ }
+ function Component2()
+ {
+  const user = useContext(UserContext);
+  return(
+    <div>
+      <h1>Component2 username is::{user}</h1>
+      </div>
+      )
+ }
+ const  r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<Component1/>)
  

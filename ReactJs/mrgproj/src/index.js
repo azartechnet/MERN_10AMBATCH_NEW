@@ -523,7 +523,7 @@ r1.render(<Counter/>)*/
 
  //React using useContext
 
- import { useContext,createContext } from 'react';
+ /*import { useContext,createContext } from 'react';
   const UserContext=createContext();
  function Component1()
  {
@@ -545,5 +545,110 @@ r1.render(<Counter/>)*/
       )
  }
  const  r1=ReactDOM.createRoot(document.getElementById('root'))
- r1.render(<Component1/>)
+ r1.render(<Component1/>)*/
+
+ //useRef
+
+ /*import {useRef}from "react";
+ function FocusInput()
+ {
+    const inputRef=useRef(null);
+    const handleClick=()=>{
+      inputRef.current.focus();
+    }
+    return(
+      <div>
+        <input type="text" ref={inputRef}/>
+        <button onClick={handleClick}>Focus</button>
+      </div>
+    )
+ }
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<FocusInput/>)*/
+
+ //Another useState
+
+ /*function UserProfile()
+ {
+  const [user,setUser]=useState({name:"mohamed",age:35,email:"mohamed@gmail.com"})
+  const updateEmail=()=>{
+    setUser({...user,email:"mohamed123@gmail.com"})
+  }
+  return(
+    <div>
+      <h1>name::{user.name}</h1>
+      <h1>age::{user.age}</h1>
+      <h1>email::{user.email}</h1>
+      <button onClick={updateEmail}>update email</button>
+    </div>
+  )
+ }
+ const r1=ReactDOM.createRoot(document.getElementById('root'))
+ r1.render(<UserProfile/>)*/
  
+ //useState TodoList
+
+
+function TodoList() {
+  const [todos, setTodos] = useState([
+    { id: 1, text: "todo1", completed: false },
+    { id: 2, text: "todo2", completed: false },
+    { id: 3, text: "todo3", completed: false },
+  ]);
+
+  const [newTodo, setNewTodo] = useState("");
+
+  const addTodo = () => {
+    if (newTodo.trim() === "") return;
+    setTodos([
+      ...todos,
+      { id: todos.length + 1, text: newTodo.trim(), completed: false },
+    ]);
+    setNewTodo(""); // Clear input
+  };
+
+  const toggleTodo = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
+  const removeTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
+  return (
+    <div>
+      <h1>Todo List</h1>
+      <input
+        type="text"
+        placeholder="Add todo"
+        value={newTodo}
+        onChange={(e) => setNewTodo(e.target.value)}
+      />
+      <button onClick={addTodo}>Add</button>
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo.id}>
+            <input
+              type="checkbox"
+              checked={todo.completed}
+              onChange={() => toggleTodo(todo.id)}
+            />
+            <span
+              style={{ textDecoration: todo.completed ? "line-through" : "none" }}
+            >
+              {todo.text}
+            </span>
+            <button onClick={() => removeTodo(todo.id)}>Remove</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+const r2 = ReactDOM.createRoot(document.getElementById("root"));
+r2.render(<TodoList />);

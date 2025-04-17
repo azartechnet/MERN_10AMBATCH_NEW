@@ -589,7 +589,7 @@ r1.render(<Counter/>)*/
  //useState TodoList
 
 
-function TodoList() {
+/*function TodoList() {
   const [todos, setTodos] = useState([
     { id: 1, text: "todo1", completed: false },
     { id: 2, text: "todo2", completed: false },
@@ -651,4 +651,67 @@ function TodoList() {
 }
 
 const r2 = ReactDOM.createRoot(document.getElementById("root"));
-r2.render(<TodoList />);
+r2.render(<TodoList />);*/
+
+//React REST API using useState and useEffect
+
+/*function App()
+{
+  const [users, setUsers] = useState([]);
+
+  useEffect(()=>{
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(data => setUsers(data))
+  })
+  return (
+    <div>
+      <h1>Users</h1>
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>{user.id}{user.name}</li>
+          ))}
+      </ul>
+    </div>
+    );
+}
+const r2 = ReactDOM.createRoot(document.getElementById("root"));
+r2.render(<App/>);*/
+
+//Reterving User Id
+
+function App() {
+  const [user, setUser] = useState(null);
+  const [id, setId] = useState(1);
+
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+      .then((response) => response.json())
+      .then((data) => setUser(data))
+      .catch((error) => console.error("Error fetching user:", error));
+  }, [id]);
+
+  return (
+    <div>
+      <h1>User Info</h1>
+      <input
+        type="number"
+        value={id}
+        min="1"
+        max="10"
+        onChange={(e) => setId(e.target.value)}
+      />
+      <ul>
+        {user && (
+          <li key={user.id}>
+            {user.id}: {user.name}
+          </li>
+        )}
+      </ul>
+    </div>
+  );
+}
+
+const r2 = ReactDOM.createRoot(document.getElementById("root"));
+r2.render(<App />);
+

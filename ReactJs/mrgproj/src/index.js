@@ -680,7 +680,7 @@ r2.render(<App/>);*/
 
 //Reterving User Id
 
-function App() {
+/*function App() {
   const [user, setUser] = useState(null);
   const [id, setId] = useState(1);
 
@@ -713,5 +713,7 @@ function App() {
 }
 
 const r2 = ReactDOM.createRoot(document.getElementById("root"));
-r2.render(<App />);
+r2.render(<App />);*/
+
+
 
